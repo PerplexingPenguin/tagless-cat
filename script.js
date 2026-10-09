@@ -11,6 +11,7 @@ const lookButton = document.createElement("button");
 const pictureButton = document.createElement("button");
 const fishButton = document.createElement("button");
 var audio = new Audio('images/meow.mp3');
+let isProcessingClick = false;
 
 // add them into the HTML document
 document.body.appendChild(catBorder);
@@ -61,25 +62,32 @@ function nameTheCat() {
 
 // hover to show different cat image
 function hover() {
-  cat.src = "images/cattongue.png";
+  if (!isProcessingClick) {
+    cat.src = "images/cattongue.png";
+  }
 }
 
 // return to original image when no focus
 function unHover() {
-  cat.src = "images/cat.png";
+  if (!isProcessingClick) {
+    cat.src = "images/cat.png";
+  }
 }
 
 // play meow and show different image when clicked on
 function catHeart() {
+  isProcessingClick = true;
   cat.src = "images/cat-love.png";
   audio.play();
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 5000)
+  isProcessingClick = false;
 }
 
 // have cat switch between two images when eyes button clicked
 function look() {
+  isProcessingClick = true;
   cat.src = "images/catlook1.png";
   setTimeout(() => {
     cat.src = "images/catlook2.png";
@@ -87,15 +95,18 @@ function look() {
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 2500);
+  isProcessingClick = false;
 }
 
 // feed cat by switching image
 function fish() {
+  isProcessingClick = true;
   cat.src = "images/cat-food.png";
   audio.play();
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 2500)
+  isProcessingClick = false;
 }
 
 
