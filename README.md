@@ -1,2 +1,3 @@
 # tagless-cat
-Draw your own kitty-cat and watch it frolic across the website! Made for Hack Club Tagless.
+Shake kitty cats and stars around in a little fidget website.
+Built without tags, for Tagless.
