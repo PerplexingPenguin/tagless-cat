@@ -42,3 +42,7 @@ body {
 #made-by {
   font-family: 'lucida grande', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+#element-container img {
+  width: 20px;
+}
