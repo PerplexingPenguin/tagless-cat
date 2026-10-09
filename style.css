@@ -28,7 +28,7 @@ body {
   font-family: 'lucida grande', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#cat-border div {
+#cat-container {
   border: 3px solid rgb(124, 124, 124);
   background-color: white;
   box-shadow: 5px 5px rgb(124, 124, 124);
@@ -44,5 +44,10 @@ body {
 }
 
 #element-container img {
-  width: 20px;
+  width: 50%;
+}
+
+#element-container {
+  width: 100%;
+  height: 100%;
 }
