@@ -20,6 +20,7 @@ elementContainer.setAttribute("id", "element-container");
 catContainer.setAttribute("id", "cat-container");
 madeBy.setAttribute("id", "made-by");
 cat.setAttribute("onmouseover", "hover();");
+cat.setAttribute("onmouseout", "unHover();");
 
 catNameParagraph.textContent = "my name is ____";
 
@@ -31,6 +32,14 @@ function nameTheCat() {
   if (catName != null) {
     catNameParagraph.textContent = "my name is " + catName;
   }
+}
+
+function hover() {
+  cat.src = "images/cattongue.png";
+}
+
+function unHover() {
+  cat.src = "images/cat.png";
 }
 
 nameTheCat();
