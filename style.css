@@ -31,7 +31,6 @@ body {
 #cat-container {
   border: 3px solid rgb(124, 124, 124);
   background-color: white;
-  box-shadow: 5px 5px rgb(124, 124, 124);
   margin: 2.5em;
   margin-bottom: -0.25em;
   border-radius: 8px;
@@ -60,9 +59,19 @@ body {
 #buttons {
   display: flex;
   flex-direction: row;
+  gap: 1em;
 }
 
 #buttons button {
   background: linear-gradient(to bottom, #0000 2px, #c9d0d9 2px, #b3c0cc 30%, #0000 30%), linear-gradient(to bottom in oklch, #9eadbc 60%, #fff);
+  border: rgb(124, 124, 124) 3px solid;
+  border-radius: 100%;
+  padding: 0.5em;
+  padding-right: 0.75em;
+  padding-left: 0.75em;
+}
 
+button:hover {
+  cursor: pointer;
+  opacity: 65%;
 }
