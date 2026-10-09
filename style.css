@@ -56,3 +56,13 @@ body {
   width: 100%;
   height: 100%;
 }
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+#buttons button {
+  background: linear-gradient(to bottom, #0000 2px, #c9d0d9 2px, #b3c0cc 30%, #0000 30%), linear-gradient(to bottom in oklch, #9eadbc 60%, #fff);
+
+}
