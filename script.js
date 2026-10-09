@@ -44,6 +44,7 @@ lookButton.setAttribute("onclick", "look();");
 fishButton.setAttribute("onclick", "fish();");
 textBox.style.display = "none";
 throwTomatoButton.setAttribute("onclick", "throwTomato();");
+textButton.setAttribute("onclick", "askForAdvice();");
 
 // add text content and background image to content
 catNameParagraph.textContent = "cat";
@@ -57,7 +58,7 @@ fishButton.textContent = "🐟";
 fishButton.setAttribute("title", `give fish`);
 textBox.textContent = " ";
 elementContainer.style.background = "url('images/dolphins.jpg') no-repeat center / cover";
-madeBy.textContent = "made by sylveon for hack club tagless :)";
+madeBy.textContent = "made for hack club tagless!";
 
 // allow user to name cat
 function nameTheCat() {
@@ -113,9 +114,14 @@ function throwTomato() {
 
 function askForAdvice() {
   let advice = ["meow mewo mowe", "tagless best YSWS", "mrrp", "GIVE ME FISH", "hugs", "vroom vroom", "low battery", "this website cost me 1 billion dollars", "and the universe said that everything you need is within you", "and the universe said you are stronger than you know", "and the universe said the light you seek is within you", "ooooOOOOOooo", "mery crismas"];
+
   let i = Math.floor(Math.random() * advice.length);
   let text = advice[i];
+  textBox.style.display = "block";
   textBox.textContent = text;
+  setTimeout(() => {
+    textBox.style.display = "none"
+  }, 5000)
 }
 
 // run name cat function on page load

@@ -3,7 +3,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10em;
 }
 
 #cat-border {
@@ -72,18 +71,27 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1em;
+  margin-top: 0.5em;
 }
 
 #buttons button {
   background: linear-gradient(to bottom, #0000 2px, #c9d0d9 2px, #b3c0cc 30%, #0000 30%), linear-gradient(to bottom in oklch, #9eadbc 60%, #fff);
   border: rgb(124, 124, 124) 3px solid;
   border-radius: 100%;
+  box-shadow: 5px 5px rgb(124, 124, 124);
   padding: 0.5em;
+  font-size: 1.5em;
   padding-right: 0.75em;
   padding-left: 0.75em;
+  transition: ease-in-out 0.2s;
 }
 
-button:hover {
+#buttons button:hover {
   cursor: pointer;
   opacity: 65%;
+}
+
+#buttons button:active {
+  box-shadow: 0px 0px;
+  opacity: 30%;
 }
