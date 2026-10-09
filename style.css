@@ -44,7 +44,12 @@ body {
 }
 
 #element-container img {
+  margin-top: 50%;
   width: 50%;
+}
+
+#element-container img:hover {
+  cursor: pointer;
 }
 
 #element-container {

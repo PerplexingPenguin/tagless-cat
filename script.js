@@ -5,6 +5,7 @@ const catNameParagraph = document.createElement("p");
 const madeBy = document.createElement("p");
 const elementContainer = document.createElement("div");
 const cat = document.createElement("img");
+var audio = new Audio('images/meow.mp3');
 
 document.body.appendChild(catBorder);
 document.body.appendChild(madeBy);
@@ -21,6 +22,8 @@ catContainer.setAttribute("id", "cat-container");
 madeBy.setAttribute("id", "made-by");
 cat.setAttribute("onmouseover", "hover();");
 cat.setAttribute("onmouseout", "unHover();");
+cat.setAttribute("onclick", "onClick();");
+
 
 catNameParagraph.textContent = "my name is ____";
 
@@ -40,6 +43,14 @@ function hover() {
 
 function unHover() {
   cat.src = "images/cat.png";
+}
+
+function onClick() {
+  cat.src = "images/cat-love.png";
+  audio.play();
+  setTimeout(() => {
+    cat.src = "images/cat.png";
+  }, 5000)
 }
 
 nameTheCat();
