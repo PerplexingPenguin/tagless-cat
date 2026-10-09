@@ -24,7 +24,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   margin-top: -0.15em;
-  padding-top: 0.25em;
+  padding-top: 0.5em;
   font-size: 1.25rem;
   font-family: 'lucida grande', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -72,6 +72,8 @@ body {
   flex-direction: row;
   gap: 1em;
   margin-top: 0.5em;
+  margin-left: 0.25em;
+  margin-right: 0.25em;
 }
 
 #buttons button {
@@ -80,7 +82,6 @@ body {
   border-radius: 100%;
   box-shadow: 5px 5px rgb(124, 124, 124);
   padding: 0.5em;
-  font-size: 1.5em;
   padding-right: 0.75em;
   padding-left: 0.75em;
   transition: ease-in-out 0.2s;

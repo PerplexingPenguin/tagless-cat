@@ -131,10 +131,10 @@ function askForAdvice() {
 }
 
 function changeBackground() {
-  let pictures = ["url('images/dolphins.jpg')", "url('images/hi.png')", "url('images/grass.jpg')"]
+  let pictures = ["dolphins.jpg", "hi.png", "grass.jpg", "monkeythink.jpeg", "santi-test.jpg", "shreya.gif", "headphones.gif", "cheese.png", "archer cinema.png", "archer_awakened.jpg", "chicken.png"];
   let i = Math.floor(Math.random() * pictures.length);
   let image = pictures[i];
-  elementContainer.style.background = image + " no-repeat center / cover"
+  elementContainer.style.background = "url('images/" + image + "')" + " no-repeat center / cover"
 }
 
 // run name cat function on page load
