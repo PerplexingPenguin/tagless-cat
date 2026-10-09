@@ -1,4 +1,4 @@
-# tagless-cat
+# A Tagless Pet Cat
 Play with a virtual cat pet in a small frutiger-aero style influenced website.
 Built without tags, for Hack Club Tagless.
 

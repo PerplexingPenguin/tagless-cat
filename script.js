@@ -11,6 +11,7 @@ const lookButton = document.createElement("button");
 const textButton = document.createElement("button");
 const textBox = document.createElement("p");
 const fishButton = document.createElement("button");
+const pictureButton = document.createElement("button");
 var audio = new Audio('images/meow.mp3');
 var audio2 = new Audio('images/tomato.mp3');
 
@@ -24,6 +25,7 @@ buttons.appendChild(throwTomatoButton);
 buttons.appendChild(lookButton);
 buttons.appendChild(textButton);
 buttons.appendChild(fishButton);
+buttons.appendChild(pictureButton);
 catContainer.appendChild(elementContainer);
 elementContainer.appendChild(textBox);
 elementContainer.appendChild(cat);
@@ -45,6 +47,8 @@ fishButton.setAttribute("onclick", "fish();");
 textBox.style.display = "none";
 throwTomatoButton.setAttribute("onclick", "throwTomato();");
 textButton.setAttribute("onclick", "askForAdvice();");
+pictureButton.setAttribute("onclick", "changeBackground();");
+
 
 // add text content and background image to content
 catNameParagraph.textContent = "cat";
@@ -56,7 +60,9 @@ textButton.textContent = "💬";
 textButton.setAttribute("title", `ask it 4 advice`);
 fishButton.textContent = "🐟";
 fishButton.setAttribute("title", `give fish`);
+pictureButton.textContent = "🖼️";
 textBox.textContent = " ";
+pictureButton.setAttribute("title", `change da bakcground`);
 elementContainer.style.background = "url('images/dolphins.jpg') no-repeat center / cover";
 madeBy.textContent = "made for hack club tagless!";
 
@@ -122,6 +128,13 @@ function askForAdvice() {
   setTimeout(() => {
     textBox.style.display = "none"
   }, 5000)
+}
+
+function changeBackground() {
+  let pictures = ["url('images/dolphins.jpg')", "url('images/hi.png')", "url('images/grass.jpg')"]
+  let i = Math.floor(Math.random() * pictures.length);
+  let image = pictures[i];
+  elementContainer.style.background = image + " no-repeat center / cover"
 }
 
 // run name cat function on page load
