@@ -8,7 +8,8 @@ const cat = document.createElement("img");
 const buttons = document.createElement("div");
 const throwTomatoButton = document.createElement("button");
 const lookButton = document.createElement("button");
-const pictureButton = document.createElement("button");
+const textButton = document.createElement("button");
+const textBox = document.createElement("p");
 const fishButton = document.createElement("button");
 var audio = new Audio('images/meow.mp3');
 var audio2 = new Audio('images/tomato.mp3');
@@ -21,9 +22,10 @@ catBorder.appendChild(buttons);
 catBorder.appendChild(catNameParagraph);
 buttons.appendChild(throwTomatoButton);
 buttons.appendChild(lookButton);
-buttons.appendChild(pictureButton);
+buttons.appendChild(textButton);
 buttons.appendChild(fishButton);
 catContainer.appendChild(elementContainer);
+elementContainer.appendChild(textBox);
 elementContainer.appendChild(cat);
 
 cat.src = "images/cat.png"; // set image to cat 
@@ -33,20 +35,27 @@ catBorder.setAttribute("id", "cat-border");
 elementContainer.setAttribute("id", "element-container");
 catContainer.setAttribute("id", "cat-container");
 buttons.setAttribute("id", "buttons");
+textBox.setAttribute("id", "text-box");
 madeBy.setAttribute("id", "made-by");
 
 // add functions to elements for hover and click animations
 cat.setAttribute("onclick", "catHeart();");
 lookButton.setAttribute("onclick", "look();");
 fishButton.setAttribute("onclick", "fish();");
+textBox.style.display = "none";
 throwTomatoButton.setAttribute("onclick", "throwTomato();");
 
 // add text content and background image to content
-catNameParagraph.textContent = "Name: ";
+catNameParagraph.textContent = "cat";
 throwTomatoButton.textContent = "🍅";
+throwTomatoButton.setAttribute("title", `THROW TOMATO`);
 lookButton.textContent = "👀";
-pictureButton.textContent = "🖼️";
+lookButton.setAttribute("title", "cat LOOKS");
+textButton.textContent = "💬";
+textButton.setAttribute("title", `ask it 4 advice`);
 fishButton.textContent = "🐟";
+fishButton.setAttribute("title", `give fish`);
+textBox.textContent = " ";
 elementContainer.style.background = "url('images/dolphins.jpg') no-repeat center / cover";
 madeBy.textContent = "made by sylveon for hack club tagless :)";
 
@@ -55,7 +64,7 @@ function nameTheCat() {
   let catName = prompt("name da cat", "cat");
 
   if (catName != null) {
-    catNameParagraph.textContent = "Name: " + catName;
+    catNameParagraph.textContent = catName;
   }
 }
 
@@ -100,6 +109,13 @@ function throwTomato() {
       cat.src = "images/cat.png";
     }, 2500)
   }, 400);
+}
+
+function askForAdvice() {
+  let advice = ["meow mewo mowe", "tagless best YSWS", "mrrp", "GIVE ME FISH", "hugs", "vroom vroom", "low battery", "this website cost me 1 billion dollars", "and the universe said that everything you need is within you", "and the universe said you are stronger than you know", "and the universe said the light you seek is within you", "ooooOOOOOooo", "mery crismas"];
+  let i = Math.floor(Math.random() * advice.length);
+  let text = advice[i];
+  textBox.textContent = text;
 }
 
 // run name cat function on page load
