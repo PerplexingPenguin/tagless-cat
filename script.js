@@ -1,24 +1,37 @@
 
 const catBorder = document.createElement("div");
 const catContainer = document.createElement("div");
-const catName = document.createElement("p");
+const catNameParagraph = document.createElement("p");
 const madeBy = document.createElement("p");
 const elementContainer = document.createElement("div");
-const cat = document.createElement("img");;
+const cat = document.createElement("img");
 
 document.body.appendChild(catBorder);
 document.body.appendChild(madeBy);
 catBorder.appendChild(catContainer);
-catBorder.appendChild(catName);
+catBorder.appendChild(catNameParagraph);
 catContainer.appendChild(elementContainer);
 elementContainer.appendChild(cat);
 
-cat.src = "images/black_cat_vector_svg.jpg";
+cat.src = "images/cat.png";
 
 catBorder.setAttribute("id", "cat-border");
 elementContainer.setAttribute("id", "element-container");
 catContainer.setAttribute("id", "cat-container");
 madeBy.setAttribute("id", "made-by");
+cat.setAttribute("onmouseover", "hover();");
 
-catName.textContent = "my name is mrrp meow mrp";
+catNameParagraph.textContent = "my name is ____";
+
 madeBy.textContent = "made by sylveon for hack club tagless :)";
+
+function nameTheCat() {
+  let catName = prompt("name da cat", "cat");
+
+  if (catName != null) {
+    catNameParagraph.textContent = "my name is " + catName;
+  }
+}
+
+nameTheCat();
+
