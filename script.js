@@ -9,6 +9,7 @@ const buttons = document.createElement("div");
 const throwTomatoButton = document.createElement("button");
 const lookButton = document.createElement("button");
 const pictureButton = document.createElement("button");
+const fishButton = document.createElement("button");
 var audio = new Audio('images/meow.mp3');
 
 // add them into the HTML document
@@ -20,6 +21,7 @@ catBorder.appendChild(catNameParagraph);
 buttons.appendChild(throwTomatoButton);
 buttons.appendChild(lookButton);
 buttons.appendChild(pictureButton);
+buttons.appendChild(fishButton);
 catContainer.appendChild(elementContainer);
 elementContainer.appendChild(cat);
 
@@ -37,12 +39,14 @@ cat.setAttribute("onmouseover", "hover();");
 cat.setAttribute("onmouseout", "unHover();");
 cat.setAttribute("onclick", "catHeart();");
 lookButton.setAttribute("onclick", "look();");
+fishButton.setAttribute("onclick", "fish();");
 
 // add text content and background image to content
 catNameParagraph.textContent = "Name: ";
 throwTomatoButton.textContent = "🍅";
 lookButton.textContent = "👀";
 pictureButton.textContent = "🖼️";
+fishButton.textContent = "🐟";
 elementContainer.style.background = "url('images/dolphins.jpg') no-repeat center / cover";
 madeBy.textContent = "made by sylveon for hack club tagless :)";
 
@@ -83,6 +87,15 @@ function look() {
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 2500);
+}
+
+// feed cat by switching image
+function fish() {
+  cat.src = "images/cat-food.png";
+  audio.play();
+  setTimeout(() => {
+    cat.src = "images/cat.png";
+  }, 2500)
 }
 
 
