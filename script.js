@@ -38,6 +38,7 @@ catNameParagraph.textContent = "Name: ";
 throwTomatoButton.textContent = "🍅";
 lookButton.textContent = "👀";
 pictureButton.textContent = "🖼️";
+elementContainer.style.background = "url('images/dolphins.jpg') no-repeat center / cover";
 
 
 madeBy.textContent = "made by sylveon for hack club tagless :)";
@@ -65,6 +66,8 @@ function onClick() {
     cat.src = "images/cat.png";
   }, 5000)
 }
+
+
 
 
 nameTheCat();
