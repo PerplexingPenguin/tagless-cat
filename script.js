@@ -11,7 +11,7 @@ const lookButton = document.createElement("button");
 const pictureButton = document.createElement("button");
 const fishButton = document.createElement("button");
 var audio = new Audio('images/meow.mp3');
-let isProcessingClick = false;
+var audio2 = new Audio('images/tomato.mp3');
 
 // add them into the HTML document
 document.body.appendChild(catBorder);
@@ -36,11 +36,10 @@ buttons.setAttribute("id", "buttons");
 madeBy.setAttribute("id", "made-by");
 
 // add functions to elements for hover and click animations
-cat.setAttribute("onmouseover", "hover();");
-cat.setAttribute("onmouseout", "unHover();");
 cat.setAttribute("onclick", "catHeart();");
 lookButton.setAttribute("onclick", "look();");
 fishButton.setAttribute("onclick", "fish();");
+throwTomatoButton.setAttribute("onclick", "throwTomato();");
 
 // add text content and background image to content
 catNameParagraph.textContent = "Name: ";
@@ -60,34 +59,17 @@ function nameTheCat() {
   }
 }
 
-// hover to show different cat image
-function hover() {
-  if (!isProcessingClick) {
-    cat.src = "images/cattongue.png";
-  }
-}
-
-// return to original image when no focus
-function unHover() {
-  if (!isProcessingClick) {
-    cat.src = "images/cat.png";
-  }
-}
-
 // play meow and show different image when clicked on
 function catHeart() {
-  isProcessingClick = true;
   cat.src = "images/cat-love.png";
   audio.play();
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 5000)
-  isProcessingClick = false;
 }
 
 // have cat switch between two images when eyes button clicked
 function look() {
-  isProcessingClick = true;
   cat.src = "images/catlook1.png";
   setTimeout(() => {
     cat.src = "images/catlook2.png";
@@ -95,20 +77,30 @@ function look() {
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 2500);
-  isProcessingClick = false;
 }
 
 // feed cat by switching image
 function fish() {
-  isProcessingClick = true;
   cat.src = "images/cat-food.png";
-  audio.play();
   setTimeout(() => {
     cat.src = "images/cat.png";
   }, 2500)
-  isProcessingClick = false;
 }
 
+var timerId;
+
+function throwTomato() {
+  if (!(timerId == null)) {
+    clearTimeout(timerId);
+  }
+  timerId = setTimeout(function () {
+    cat.src = "images/cat-tomato.gif";
+    audio2.play();
+    setTimeout(() => {
+      cat.src = "images/cat.png";
+    }, 2500)
+  }, 400);
+}
 
 // run name cat function on page load
 nameTheCat();
